@@ -1,0 +1,10 @@
+echo "Library/" >> .gitignore
+echo "Library/PackageCache/com.unity.burst@1.8.9/.Runtime/libburst-llvm-15.dylib" >> .gitignore
+Library/
+Temp/
+Obj/
+.vs/
+Build/
+*.dll
+*.dylib
+*.so
