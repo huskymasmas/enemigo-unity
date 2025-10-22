@@ -10,7 +10,7 @@ public class batalla : MonoBehaviour
     public float i;
     public int j;
     SpriteRenderer sprite;
-
+    
     public TMP_Text texto;
     // Start is called before the first frame update
     void Start()

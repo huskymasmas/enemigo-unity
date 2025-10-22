@@ -10,7 +10,7 @@ public class movimiento_personaje : MonoBehaviour
     public float velocidad;
     public GameObject camva1 , personaje;
     Rigidbody2D rb;
-    public GameObject grupo;
+    public GameObject grupo ;
     void Start()
     {
          rb = GetComponent<Rigidbody2D>();
@@ -23,12 +23,16 @@ public class movimiento_personaje : MonoBehaviour
         ver = Input.GetAxis("Vertical");
         Vector2 movimiento = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.MovePosition(rb.position + movimiento * velocidad * Time.fixedDeltaTime);
+        
     
     }
-
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(Transicion());
+        
+            StartCoroutine(Transicion());
+        
+   
        
     }
     IEnumerator Transicion()
@@ -39,6 +43,7 @@ public class movimiento_personaje : MonoBehaviour
         LeanTween.alpha(grupo.GetComponent<RectTransform>(), 0f, 1f).setDelay(0.2f);
         grupo.GetComponent<CanvasGroup>().blocksRaycasts = false;
         batalla[] enemigos = FindObjectsOfType<batalla>();
+
         foreach (batalla enemigo in enemigos)
         {
             enemigo.enabled = false; 
