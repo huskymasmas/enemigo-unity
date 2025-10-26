@@ -40,8 +40,7 @@ public class movimiento_personaje : MonoBehaviour
         camva1.SetActive(true);
         
         yield return new WaitForSeconds(1f);
-        LeanTween.alpha(grupo.GetComponent<RectTransform>(), 0f, 1f).setDelay(0.2f);
-        grupo.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        
         batalla[] enemigos = FindObjectsOfType<batalla>();
 
         foreach (batalla enemigo in enemigos)
@@ -57,7 +56,7 @@ public class movimiento_personaje : MonoBehaviour
       
         yield return new WaitForSeconds(1f);
         camva1.SetActive(false);
-        LeanTween.alpha(grupo.GetComponent<RectTransform>(), 1f, 0f).setDelay(1f);
+        
     }
 
 
